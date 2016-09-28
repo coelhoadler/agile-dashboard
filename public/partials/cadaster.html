@@ -1,0 +1,89 @@
+<h4 style="color: #cccccc;">Novo Usuário</h4>
+<div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
+    <form novalidate name="userForm" ng-submit="save()">
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--6-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="fullName_user" name="fullName_user" focus
+                        ng-model="user.fullName" placeholder="" required ng-maxlength="100" />
+                    <label class="mdl-textfield__label" for="name_user">Nome Completo *</label>
+                    <span ng-show="userForm.$submitted && userForm.fullName_user.$error.required">
+                        <span class="mdl-textfield__error">O campo <b>Nome Completo</b> é obrigatório</span>                   
+                    </span>
+                    <span ng-show="userForm.$submitted && userForm.fullName_user.$error.maxlength">
+                        <span class="mdl-textfield__error">Deve conter no máximo 100 caracteres</span>
+                    </span>                         
+                </div>        
+            </div>
+            <div class="mdl-cell mdl-cell--6-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="date" id="born_user" name="born_user" placeholder=""
+                        ng-model="user.born" required />
+                    <label class="mdl-textfield__label" for="born_user">Data de Nascimento *</label>
+                    <span ng-show="userForm.$submitted && userForm.born_user.$error.required">
+                        <span class="mdl-textfield__error">O campo <b>Data de Nascimento</b> é obrigatório</span>                   
+                    </span>                
+                </div>         
+            </div>
+        </div>
+
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--6-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="cpf_user" name="cpf_user"
+                        ng-model="user.cpf" placeholder="" required ui-mask="999.999.999-99" />
+                    <label class="mdl-textfield__label" for="cpf_user">CPF *</label>
+                    <span ng-show="userForm.$submitted && userForm.cpf_user.$error.required">
+                        <span class="mdl-textfield__error">O campo <b>CPF</b> é obrigatório</span>                   
+                    </span>                
+                </div>                
+            </div>            
+            <div class="mdl-cell mdl-cell--6-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="rg_user" name="rg_user"
+                        ng-model="user.rg" placeholder="" required ui-mask="99.999.999-9" />
+                    <label class="mdl-textfield__label" for="rg_user">RG *</label>
+                    <span ng-show="userForm.$submitted && userForm.rg_user.$error.required">
+                        <span class="mdl-textfield__error">O campo <b>RG</b> é obrigatório</span>                   
+                    </span>                                           
+                </div>                
+            </div>
+        </div>
+
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--1-col">
+                <span>Gênero: </span> 
+            </div>
+            <div class="mdl-cell mdl-cell--11-col">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="gender_male">
+                    <input type="radio" id="gender_male" ng-model="user.gender" class="mdl-radio__button" name="options" value="male" />
+                    <span class="mdl-radio__label">Masculino</span>
+                </label>
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="gender_female">
+                    <input type="radio" id="gender_female" ng-model="user.gender" class="mdl-radio__button" name="options" value="female" />
+                    <span class="mdl-radio__label">Feminino</span>
+                </label> 
+            </div>            
+        </div>
+
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell-12-col">
+                <button class="mdl-button mdl-js-button mdl-button--icon" type="submit" id="tt1">
+                    <i style="color: #6af287;" class="material-icons">done</i>
+                    <div class="mdl-tooltip" data-mdl-for="tt1">
+                        Salvar dados do usuário
+                    </div>
+                </button>              
+                <button class="mdl-button mdl-js-button mdl-button--icon" id="tt2">
+                    <a href="/dashboard/user/list">
+                        <i style="color: #f46969;" class="material-icons">clear</i>
+                    </a>
+                    <div class="mdl-tooltip" data-mdl-for="tt2">
+                        Cancelar
+                    </div>                
+                </button>
+                {{formUser.$valid}}              
+            </div>
+        </div>
+    </form>
+</div>

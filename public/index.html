@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="agileDash">
+    <head>
+        <meta charset="UTF-8">
+        <base href="/">
+        <meta name="viewport" content="width=device-width">
+        <link rel="shortcut icon" href="img/ico/favicon.png" />
+        <link rel="img/ico/apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
+        <link rel="img/ico/apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png" />
+        <link rel="img/ico/apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
+        <link rel="img/ico/apple-touch-icon-precomposed" sizes="57x57" href="ico/apple-touch-icon-57-precomposed.png" />        
+        <title>Agile Dashboard</title>
+
+         <!-- css -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.cyan-light_blue.min.css">
+        <link rel="stylesheet" href="css/styles.min.css">
+
+        <!-- modules angular -->
+        <script src="js/lib/angular.min.js"></script>
+        <script src="js/lib/angular-resource.min.js"></script>
+        <script src="js/lib/angular-route.min.js"></script>
+        <script src="js/lib/angular-mask.min.js"></script>
+            
+        <!--services-->
+        <script src="js/main.js"></script>
+        <script src="js/services/my-services.js"></script>
+
+        <!--controllers-->
+        <script src="js/controllers/list-controller.js"></script>
+        <script src="js/controllers/cadaster-controller.js"></script>
+        <script src="js/controllers/app-controller.js"></script>
+
+        <!--directives-->
+        <script src="js/directives/my-directives.js"></script>
+
+        <!--filters-->
+        <script src="js/filters/my-filters.js"></script>
+        <style>
+        ::-webkit-scrollbar { 
+            display: none; 
+        }
+        </style>        
+    </head>
+    <body ng-controller="AppController">
+        <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+            <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+                <div class="mdl-layout__header-row">
+                    <img ng-src="images/ico/apple-touch-icon-57-precomposed.png" style="margin: 0px 10px; padding: 5px; width: 32px;"/>
+                    <span class="mdl-layout-title">
+                        {{title}} 
+                        <div class="breadcrumb">
+                            <a href="/dashboard/user/list">Home</a>
+                            <label>{{currentPage}}</label>
+                        </div>
+                    </span>
+                    
+                    <div class="android-header-spacer mdl-layout-spacer"></div>
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" ng-show="showUsersSearch">
+                        <label class="mdl-button mdl-js-button mdl-button--icon" style="top: initial!important;" for="search">
+                            <i class="material-icons">search</i>
+                        </label>
+                        <div class="mdl-textfield__expandable-holder">
+                        <input class="mdl-textfield__input" type="text" id="search" placeholder="Buscar Usuário" ng-model="myData1.search">
+                        <label class="mdl-textfield__label" for="search">Buscar Usuário</label>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+                <header class="demo-drawer-header"  style="text-align: center;">
+                    <div>
+                        <img ng-src="images/acoelho.jpg" class="user-avatar" />
+                        <div>
+                            <span style="color: #570057;">{{userName}}</span>
+                        </div>
+                    </div>
+                </header>
+                <!-- menu-->
+                <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+                    <a class="mdl-navigation__link" href="dashboard/user/cadaster"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">add_circle_outline</i>Novo Usuário</a>
+                    <a class="mdl-navigation__link" href="dashboard/user/list"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Usuários Cadastrados</a>
+                </nav>
+            </div>
+            <main class="mdl-layout__content mdl-color--grey-100">
+                <div class="mdl-grid demo-content">
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <ng-view></ng-view>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!--Toast message-->
+        <div id="toast-messages" class="mdl-js-snackbar mdl-snackbar">
+            <div class="mdl-snackbar__text"></div>
+            <button class="mdl-snackbar__action" type="button"></button>
+        </div>
+
+        <!--material design-->
+        <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>        
+    </body>
+</html>

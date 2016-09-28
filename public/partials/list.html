@@ -1,0 +1,42 @@
+<h4 style="color: #cccccc;">Usuários Cadastrados</h4>
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp mdl-cell--12-col">
+  <thead ng-show="!noReg">
+    <tr>
+      <th>Nome Completo</th>
+      <th>RG</th>
+      <th>CPF</th>
+      <th>Data de Nascimento</th>
+      <th>Gênero</th>
+      <th></th>      
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="user in users | filter:myData2.search"> 
+      <td>{{user.fullName}}</td>
+      <td><span>{{user.rg|rg}}</span></td>
+      <td>{{user.cpf|cpf}}</td>
+      <td>{{user.born | date : 'dd/MM/yyyy'}}</td>
+      <td><span ng-bind="user.gender == 'female' ? 'Feminino' : 'Masculino'"></span>  
+      <td>
+        <button class="mdl-button mdl-js-button mdl-button--icon">
+          <a href="dashboard/user/edit/{{user._id}}">
+            <i style="color: #37474F;" class="material-icons">mode_edit</i>
+          </a>
+        </button>        
+        <button class="mdl-button mdl-js-button mdl-button--icon" ng-click="remove(user)">
+          <a href="#">
+            <i style="color: #f46969;" class="material-icons">delete_forever</i>
+          </a>
+        </button>        
+      </td>
+    </tr>
+    <tr ng-show="noReg">
+      <td colspan="6">
+          <span>
+            Não consta registro para exibição. Clique 
+            <a href="/dashboard/user/cadaster">aqui</a> para cadastrar.
+          </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
