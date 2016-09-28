@@ -22,6 +22,6 @@ REST API
 
 Original template: https://getmdl.io/templates/dashboard/index.html
 
-Other frameworks use MD:
+Other frameworks uses MD:
 - http://startangular.com/ (AngularJS)
-- http://materializecss.com/
+- http://materializecss.com/ (Only CSS and Javascript)
