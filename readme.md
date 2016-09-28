@@ -1,9 +1,9 @@
-1. First clone the repo:
+1 - First clone the repo:
 ```
 Git Clone: https://github.com/coelhoadler/agile-dashboard.git
 ```
 
-2. Enter into the folder **agile-dashboard/**
+2 - Enter into the folder **agile-dashboard/**
 
 Execute:
 ```
