@@ -2,7 +2,7 @@ angular.module('agileDash')
 .controller('ListController', ['$scope', 'resourceUser', 'ShareData', '$rootScope', '$location',
 function($scope, resourceUser, shareData, $rootScope, $location) {
     
-    $scope.myData2 = shareData;
+    $scope.inpTextSearchUser = shareData;
     $rootScope.$broadcast('showUsersSearch');
     $scope.noReg = false;
     let snackbarContainer = document.querySelector('#toast-messages');

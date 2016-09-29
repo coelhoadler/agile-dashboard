@@ -11,12 +11,18 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="user in users | filter:myData2.search"> 
+    <tr ng-repeat="user in users | filter:inpTextSearchUser.text"> 
       <td>{{user.fullName}}</td>
       <td><span>{{user.rg|rg}}</span></td>
       <td>{{user.cpf|cpf}}</td>
       <td>{{user.born | date : 'dd/MM/yyyy'}}</td>
-      <td><span ng-bind="user.gender == 'female' ? 'Feminino' : 'Masculino'"></span>  
+      <td>
+        <i style="color: #fc9fe1" class="material-icons" ng-if="user.gender == 'female'" id="tt-female{{user._id}}">face</i>  
+        <i style="color: #00b9fc" class="material-icons" ng-if="user.gender == 'male'" id="tt-male{{user._id}}">face</i>
+
+        <div class="mdl-tooltip" data-mdl-for="tt-female{{user._id}}">Feminino</div>
+        <div class="mdl-tooltip" data-mdl-for="tt-male{{user._id}}">Masculino</div>
+
       <td>
         <button class="mdl-button mdl-js-button mdl-button--icon" ng-click="editUser(user)">
             <i style="color: #37474F;" class="material-icons">mode_edit</i>

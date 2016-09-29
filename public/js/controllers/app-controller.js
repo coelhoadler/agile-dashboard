@@ -5,6 +5,7 @@ function($scope, shareData) {
     $scope.userName = "Adler Coelho Santos";
 
     $scope.inpTextSearchUser = shareData;
+
     $scope.title = "Agile Dashboard";
     $scope.showUsersSearch = false;
 
