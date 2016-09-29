@@ -19,19 +19,19 @@
       <td>
         <i style="color: #fc9fe1" class="material-icons" ng-if="user.gender == 'female'" id="tt-female{{user._id}}">face</i>  
         <i style="color: #00b9fc" class="material-icons" ng-if="user.gender == 'male'" id="tt-male{{user._id}}">face</i>
-
         <div class="mdl-tooltip" data-mdl-for="tt-female{{user._id}}">Feminino</div>
-        <div class="mdl-tooltip" data-mdl-for="tt-male{{user._id}}">Masculino</div>
-
+        <div class="mdl-tooltip" data-mdl-for="tt-male{{user._id}}">Masculino</div>        
       <td>
-        <button class="mdl-button mdl-js-button mdl-button--icon" ng-click="editUser(user)">
+        <button class="mdl-button mdl-js-button mdl-button--icon" ng-click="editUser(user)" id="tt-edit{{user._id}}">
             <i style="color: #37474F;" class="material-icons">mode_edit</i>
         </button>        
-        <button class="mdl-button mdl-js-button mdl-button--icon" ng-click="removeUser(user)">
+        <button class="mdl-button mdl-js-button mdl-button--icon" ng-click="removeUser(user)" id="tt-remove{{user._id}}">
           <a href="#">
             <i style="color: #f46969;" class="material-icons">delete_forever</i>
           </a>
-        </button>        
+        </button>
+        <div class="mdl-tooltip" data-mdl-for="tt-edit{{user._id}}">Editar</div>
+        <div class="mdl-tooltip" data-mdl-for="tt-remove{{user._id}}">Remover</div>             
       </td>
     </tr>
     <tr ng-show="noReg">
