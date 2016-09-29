@@ -48,6 +48,6 @@ angular.module('agileServices', ['ngResource'])
 })
 .factory('ShareData', function() {
     return {
-        search : ""
+        text : ""
     }
 });

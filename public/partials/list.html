@@ -18,12 +18,10 @@
       <td>{{user.born | date : 'dd/MM/yyyy'}}</td>
       <td><span ng-bind="user.gender == 'female' ? 'Feminino' : 'Masculino'"></span>  
       <td>
-        <button class="mdl-button mdl-js-button mdl-button--icon">
-          <a href="dashboard/user/edit/{{user._id}}">
+        <button class="mdl-button mdl-js-button mdl-button--icon" ng-click="editUser(user)">
             <i style="color: #37474F;" class="material-icons">mode_edit</i>
-          </a>
         </button>        
-        <button class="mdl-button mdl-js-button mdl-button--icon" ng-click="remove(user)">
+        <button class="mdl-button mdl-js-button mdl-button--icon" ng-click="removeUser(user)">
           <a href="#">
             <i style="color: #f46969;" class="material-icons">delete_forever</i>
           </a>

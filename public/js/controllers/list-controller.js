@@ -1,6 +1,6 @@
 angular.module('agileDash')
-.controller('ListController', ['$scope', 'resourceUser', 'ShareData', '$rootScope',
-function($scope, resourceUser, shareData, $rootScope) {
+.controller('ListController', ['$scope', 'resourceUser', 'ShareData', '$rootScope', '$location',
+function($scope, resourceUser, shareData, $rootScope, $location) {
     
     $scope.myData2 = shareData;
     $rootScope.$broadcast('showUsersSearch');
@@ -21,8 +21,13 @@ function($scope, resourceUser, shareData, $rootScope) {
         });
     }
 
+    // Event to edit an user
+    $scope.editUser = (user) => {
+        $location.path('dashboard/user/edit/' + user._id);
+    };
+
     // Event to remove an user
-    $scope.remove = (user) => {
+    $scope.removeUser = (user) => {
         var userName = user.fullName;
         if (confirm("Excluir o usuário " + userName  + "?")) {
             resourceUser.delete({userId : user._id},

@@ -4,11 +4,11 @@
         <meta charset="UTF-8">
         <base href="/">
         <meta name="viewport" content="width=device-width">
-        <link rel="shortcut icon" href="img/ico/favicon.png" />
-        <link rel="img/ico/apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
-        <link rel="img/ico/apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png" />
-        <link rel="img/ico/apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
-        <link rel="img/ico/apple-touch-icon-precomposed" sizes="57x57" href="ico/apple-touch-icon-57-precomposed.png" />        
+        <link rel="shortcut icon" href="images/ico/favicon.png" />
+        <link rel="images/ico/apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
+        <link rel="images/ico/apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png" />
+        <link rel="images/ico/apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
+        <link rel="images/ico/apple-touch-icon-precomposed" sizes="57x57" href="ico/apple-touch-icon-57-precomposed.png" />        
         <title>Agile Dashboard</title>
 
          <!-- css -->
@@ -37,10 +37,11 @@
 
         <!--filters-->
         <script src="js/filters/my-filters.js"></script>
+        
         <style>
-        ::-webkit-scrollbar { 
-            display: none; 
-        }
+            ::-webkit-scrollbar { 
+                display: none; 
+            }
         </style>        
     </head>
     <body ng-controller="AppController">
@@ -55,16 +56,14 @@
                             <label>{{currentPage}}</label>
                         </div>
                     </span>
-                    
                     <div class="android-header-spacer mdl-layout-spacer"></div>
-
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" ng-show="showUsersSearch">
                         <label class="mdl-button mdl-js-button mdl-button--icon" style="top: initial!important;" for="search">
                             <i class="material-icons">search</i>
                         </label>
                         <div class="mdl-textfield__expandable-holder">
-                        <input class="mdl-textfield__input" type="text" id="search" placeholder="Buscar Usuário" ng-model="myData1.search">
-                        <label class="mdl-textfield__label" for="search">Buscar Usuário</label>
+                            <input class="mdl-textfield__input" type="text" id="search" placeholder="Buscar Usuário" ng-model="inpTextSearchUser.text">
+                            <label class="mdl-textfield__label" for="search">Buscar Usuário</label>
                         </div>
                     </div>
                 </div>
@@ -92,13 +91,11 @@
                 </div>
             </main>
         </div>
-
         <!--Toast message-->
         <div id="toast-messages" class="mdl-js-snackbar mdl-snackbar">
             <div class="mdl-snackbar__text"></div>
             <button class="mdl-snackbar__action" type="button"></button>
         </div>
-
         <!--material design-->
         <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>        
     </body>

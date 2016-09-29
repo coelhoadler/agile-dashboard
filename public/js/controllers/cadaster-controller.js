@@ -42,4 +42,9 @@ function($scope, cadasterUser, resourceUser, $routeParams, shareData, $rootScope
             });
         }
     }
+
+    $scope.returnToHome = () => {
+        $location.path("/dashboard/user/list");
+    }
+
 }]);

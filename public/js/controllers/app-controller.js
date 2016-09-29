@@ -4,10 +4,9 @@ function($scope, shareData) {
 
     $scope.userName = "Adler Coelho Santos";
 
-    $scope.myData1 = shareData;
+    $scope.inpTextSearchUser = shareData;
     $scope.title = "Agile Dashboard";
     $scope.showUsersSearch = false;
-
 
     $scope.$on('showUsersSearch', function() {
         $scope.showUsersSearch = true;
